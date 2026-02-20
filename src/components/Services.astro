@@ -6,43 +6,52 @@ const services = [
 		title: "Trockenbauwände",
 		description: "Errichtung von Trennwänden, Ständerwänden und nichttragenden Innenwänden nach Maß.",
 		icon: "🏗️",
+		gradient: "from-blue-500 to-blue-600",
 	},
 	{
 		title: "Abgehängte Decken",
 		description: "Designdecken, Akustikdecken und Systemdecken für moderne Innenräume.",
 		icon: "🎨",
+		gradient: "from-purple-500 to-purple-600",
 	},
 	{
 		title: "Innenausbau",
 		description: "Kompletter Innenausbau von Wohnungen, Büros und Gewerberäumen.",
 		icon: "🏢",
+		gradient: "from-pink-500 to-pink-600",
 	},
 	{
 		title: "Estricharbeiten",
 		description: "Zementestrich, Anhydritestrich und Trockenestrich für professionelle Böden.",
 		icon: "🏠",
+		gradient: "from-orange-500 to-orange-600",
 	},
 	{
 		title: "Akustiklösungen",
 		description: "Schalldämmung und Akustikdecken für besseres Raumklima.",
-		icon: "🔇",
+		icon: "🔊",
+		gradient: "from-teal-500 to-teal-600",
 	},
 	{
 		title: "Sanierung",
 		description: "Altbau-Sanierung und Renovierung mit Fokus auf Qualität und Effizienz.",
 		icon: "🔧",
+		gradient: "from-indigo-500 to-indigo-600",
 	},
 ];
 ---
 
-<section id="leistungen" class="section">
+<section id="leistungen" class="section bg-gradient-to-b from-gray-50 to-white">
 	<div class="container">
 		<!-- Section Header -->
-		<div class="text-center mb-12 animate-fade-in-up">
-			<h2 class="h2 mb-4">
+		<div class="text-center mb-16">
+			<div class="inline-block mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-semibold animate-fade-in-up">
+				Unsere Expertise
+			</div>
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 animate-fade-in-up">
 				Unsere Leistungen
 			</h2>
-			<p class="text-lg max-w-2xl mx-auto" style="color: var(--color-text-muted);">
+			<p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
 				Professionelle Trockenbauarbeiten für Ihr Projekt - von der
 				Planung bis zur Fertigstellung
 			</p>
@@ -52,16 +61,40 @@ const services = [
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{services.map((service, index) => (
 				<div
-					class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
+					class="group relative p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl border border-gray-100 hover:border-gradient-to-r transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
 					style={`animation-delay: ${index * 0.1}s;`}
 				>
-					<div class="text-5xl mb-6 hover:scale-110 transition-transform duration-300">
-						{service.icon}
+					<!-- Gradient Border -->
+					<div
+						class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r"
+						style={`background: linear-gradient(to right, var(--color-${service.gradient.split("-")[0]}), var(--color-${service.gradient.split("-")[1]})); mask-image: linear-gradient(to bottom, black 0%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 0%);`}
+					></div>
+
+					<!-- Content -->
+					<div class="relative z-10">
+						<!-- Icon -->
+						<div
+							class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300"
+							style={`background: linear-gradient(135deg, var(--color-${service.gradient.split("-")[0]}), var(--color-${service.gradient.split("-")[1]}));`}
+						>
+							{service.icon}
+						</div>
+
+						<!-- Title -->
+						<h3 class="text-xl font-bold mb-4 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all duration-300">
+							{service.title}
+						</h3>
+
+						<!-- Description -->
+						<p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+							{service.description}
+						</p>
+
+						<!-- Arrow -->
+						<div class="mt-6 flex items-center text-sm font-semibold group-hover:translate-x-2 transition-transform duration-300" style="color: var(--color-${service.gradient.split("-")[0]});">
+							Mehr erfahren →
+						</div>
 					</div>
-					<h3 class="text-xl font-bold mb-4">{service.title}</h3>
-					<p style="color: var(--color-text-muted);">
-						{service.description}
-					</p>
 				</div>
 			))}
 		</div>

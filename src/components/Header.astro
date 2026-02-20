@@ -2,50 +2,33 @@
 import config from "@/config/config.json";
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+<header class="backdrop-blur-md bg-white/80 sticky top-0 z-50 border-b border-gray-100 shadow-sm">
 	<nav class="container flex items-center justify-between py-4">
 		<!-- Logo -->
 		<a
 			href="/"
-			class="text-xl font-bold transition-all duration-300 hover:scale-105"
-			style="color: var(--color-primary);"
+			class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300 hover:scale-105"
 		>
 			{config.site.logo_text_custom}
 		</a>
 
 		<!-- Navigation -->
-		<div class="hidden md:flex items-center gap-8">
-			<a
-				href="#leistungen"
-				class="font-semibold hover:text-primary-dark transition-colors duration-200"
-			>
-				Leistungen
-			</a>
-			<a
-				href="#uber-uns"
-				class="font-semibold hover:text-primary-dark transition-colors duration-200"
-			>
-				Über uns
-			</a>
-			<a
-				href="#referenzen"
-				class="font-semibold hover:text-primary-dark transition-colors duration-200"
-			>
-				Referenzen
-			</a>
-			<a
-				href="#kontakt"
-				class="font-semibold hover:text-primary-dark transition-colors duration-200"
-			>
-				Kontakt
-			</a>
+		<div class="hidden md:flex items-center gap-2">
+			{["Leistungen", "Über uns", "Referenzen", "Kontakt"].map((item) => (
+				<a
+					href={`#${item.toLowerCase().replace("ü", "u").replace("ä", "a").replace("ö", "o")}`}
+					class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 transition-all duration-300 hover:scale-105"
+				>
+					{item}
+				</a>
+			))}
 		</div>
 
 		<!-- CTA Button -->
 		{config.navigation_button.enable && (
 			<a
 				href={config.navigation_button.link}
-				class="btn btn-sm btn-primary transition-all duration-300"
+				class="px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 hover:-translate-y-1 transition-all duration-300"
 			>
 				{config.navigation_button.label}
 			</a>

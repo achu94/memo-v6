@@ -1,11 +1,11 @@
-/* Buttons */
+/* Buttons - Modern Design */
 .btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0.75rem 1.5rem;
 	font-weight: 600;
-	border-radius: 0.5rem;
+	border-radius: 1rem;
 	border: 2px solid transparent;
 	transition: all 0.3s ease;
 	cursor: pointer;
@@ -15,7 +15,7 @@
 .btn-sm {
 	padding: 0.5rem 1rem;
 	font-size: 0.875rem;
-	border-radius: 0.375rem;
+	border-radius: 0.75rem;
 }
 
 .btn-lg {
@@ -24,52 +24,50 @@
 }
 
 .btn-primary {
-	border-color: var(--color-primary);
-	background-color: var(--color-primary);
+	border-color: #2563eb;
+	background-color: #2563eb;
 	color: white;
 }
 
 .btn-primary:hover {
-	background-color: #2563eb;
-	box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+	background-color: #1d4ed8;
+	box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3), 0 10px 10px -5px rgba(37, 99, 235, 0.1);
 	transform: translateY(-0.25rem);
 }
 
 .btn-secondary {
-	border-color: var(--color-secondary);
-	background-color: var(--color-secondary);
+	border-color: #475569;
+	background-color: #475569;
 	color: white;
 }
 
 .btn-secondary:hover {
-	background-color: #475569;
-	box-shadow: 0 4px 6px -1px rgba(100, 116, 139, 0.3);
+	background-color: #334155;
+	box-shadow: 0 10px 15px -3px rgba(71, 85, 105, 0.3);
 }
 
 .btn-outline {
-	border-color: var(--color-primary);
+	border-color: #2563eb;
 	background-color: transparent;
-	color: var(--color-primary);
+	color: #2563eb;
 }
 
 .btn-outline:hover {
-	background-color: var(--color-primary);
+	background-color: #2563eb;
 	color: white;
 }
 
-.btn-outline-white {
-	border-color: white;
-	background-color: transparent;
+/* Gradient Buttons */
+.btn-gradient {
+	background: linear-gradient(135deg, #3b82f6, #9333ea);
+	border: none;
 	color: white;
+	box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
 
-.btn-outline-white:hover {
-	background-color: white;
-	color: var(--color-primary);
-}
-
-.btn:hover {
-	transition: all 0.3s ease;
+.btn-gradient:hover {
+	box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
+	transform: translateY(-0.25rem);
 }
 
 /* Focus states */

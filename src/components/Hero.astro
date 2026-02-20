@@ -2,39 +2,79 @@
 import config from "@/config/config.json";
 ---
 
-<section class="relative overflow-hidden" style="background-color: var(--color-primary);">
-	<div class="container section-sm py-20">
-		<div class="text-center text-white animate-fade-in-up">
-			<h1 class="h1 mb-6">
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500">
+	<!-- Animated Background Pattern -->
+	<div class="absolute inset-0">
+		<div class="absolute top-0 left-0 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse"></div>
+		<div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-white/5 blur-2xl animate-pulse" style="animation-delay: 2s;"></div>
+	</div>
+
+	<!-- Content -->
+	<div class="container relative z-10 section-sm py-20">
+		<div class="text-center text-white">
+			<!-- Badge -->
+			<div class="inline-block mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+				<span class="text-sm font-medium">
+					✨ Über 20 Jahre Erfahrung
+				</span>
+			</div>
+
+			<!-- Title -->
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight animate-fade-in-up">
 				{config.site.name}
 			</h1>
-			<p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in" style="animation-delay: 0.2s;">
+
+			<!-- Subtitle -->
+			<p class="text-xl md:text-2xl lg:text-3xl mb-8 font-light opacity-95 animate-fade-in" style="animation-delay: 0.2s;">
 				{config.site.tagline}
 			</p>
-			<p class="text-lg mb-12 max-w-2xl mx-auto opacity-80 animate-fade-in" style="animation-delay: 0.4s;">
+
+			<!-- Description -->
+			<p class="text-base md:text-lg lg:text-xl mb-12 max-w-2xl mx-auto opacity-90 animate-fade-in" style="animation-delay: 0.4s;">
 				Professioneller Trockenbau, Innenausbau und Akustikdecken
-				in Berlin und Umgebung. Über 20 Jahre Erfahrung für perfekte
-				Ergebnisse.
+				in Berlin und Umgebung. Wir liefern Qualität, auf die Sie
+				zählen können.
 			</p>
+
+			<!-- CTA Buttons -->
 			<div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style="animation-delay: 0.6s;">
 				{config.navigation_button.enable && (
 					<a
 						href={config.navigation_button.link}
-						class="btn btn-lg"
-						style="background-color: white; color: var(--color-primary);"
+						class="group relative px-8 py-4 rounded-xl font-semibold bg-white text-blue-600 shadow-2xl shadow-white/30 hover:shadow-white/50 hover:-translate-y-1 transition-all duration-300"
 					>
-						{config.navigation_button.label}
+						<span class="relative z-10">
+							{config.navigation_button.label}
+						</span>
+						<div class="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<span class="relative z-10 group-hover:text-white transition-colors duration-300">
+							{config.navigation_button.label}
+						</span>
 					</a>
 				)}
-				<a href="#leistungen" class="btn btn-outline-white btn-lg">
-					Leistungen ansehen
+				<a
+					href="#leistungen"
+					class="px-8 py-4 rounded-xl font-semibold border-2 border-white/50 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/80 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+				>
+					Leistungen ansehen →
 				</a>
 			</div>
 		</div>
 	</div>
-	<!-- Decorative Background Pattern -->
-	<div class="absolute inset-0 opacity-5">
-		<div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-		<div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+
+	<!-- Floating Elements -->
+	<div class="absolute bottom-0 left-0 right-0">
+		<svg
+			class="w-full h-16 text-white"
+			viewBox="0 0 1440 60"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M0 60V0C240 40 480 20 720 30C960 40 1200 50 1440 60V60H0Z"
+				fill="white"
+			/>
+		</svg>
 	</div>
 </section>
