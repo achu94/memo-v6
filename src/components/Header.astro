@@ -2,26 +2,50 @@
 import config from "@/config/config.json";
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
 	<nav class="container flex items-center justify-between py-4">
 		<!-- Logo -->
-		<a href="/" class="text-xl font-bold" style="color: var(--color-primary);">
+		<a
+			href="/"
+			class="text-xl font-bold transition-all duration-300 hover:scale-105"
+			style="color: var(--color-primary);"
+		>
 			{config.site.logo_text_custom}
 		</a>
 
 		<!-- Navigation -->
 		<div class="hidden md:flex items-center gap-8">
-			<a href="#leistungen" class="hover:text-blue-600 transition-colors">Leistungen</a>
-			<a href="#uber-uns" class="hover:text-blue-600 transition-colors">Über uns</a>
-			<a href="#referenzen" class="hover:text-blue-600 transition-colors">Referenzen</a>
-			<a href="#kontakt" class="hover:text-blue-600 transition-colors">Kontakt</a>
+			<a
+				href="#leistungen"
+				class="font-semibold hover:text-primary-dark transition-colors duration-200"
+			>
+				Leistungen
+			</a>
+			<a
+				href="#uber-uns"
+				class="font-semibold hover:text-primary-dark transition-colors duration-200"
+			>
+				Über uns
+			</a>
+			<a
+				href="#referenzen"
+				class="font-semibold hover:text-primary-dark transition-colors duration-200"
+			>
+				Referenzen
+			</a>
+			<a
+				href="#kontakt"
+				class="font-semibold hover:text-primary-dark transition-colors duration-200"
+			>
+				Kontakt
+			</a>
 		</div>
 
 		<!-- CTA Button -->
 		{config.navigation_button.enable && (
 			<a
 				href={config.navigation_button.link}
-				class="btn btn-primary btn-sm"
+				class="btn btn-sm btn-primary transition-all duration-300"
 			>
 				{config.navigation_button.label}
 			</a>

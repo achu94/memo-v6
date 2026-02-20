@@ -1,50 +1,45 @@
 ---
 import config from "@/config/config.json";
+
 const services = [
 	{
 		title: "Trockenbauwände",
-		description:
-			"Errichtung von Trennwänden, Ständerwänden und nichttragenden Innenwänden nach Maß.",
+		description: "Errichtung von Trennwänden, Ständerwänden und nichttragenden Innenwänden nach Maß.",
 		icon: "🏗️",
 	},
 	{
 		title: "Abgehängte Decken",
-		description:
-			"Designdecken, Akustikdecken und Systemdecken für moderne Innenräume.",
+		description: "Designdecken, Akustikdecken und Systemdecken für moderne Innenräume.",
 		icon: "🎨",
 	},
 	{
 		title: "Innenausbau",
-		description:
-			"Kompletter Innenausbau von Wohnungen, Büros und Gewerberäumen.",
+		description: "Kompletter Innenausbau von Wohnungen, Büros und Gewerberäumen.",
 		icon: "🏢",
 	},
 	{
 		title: "Estricharbeiten",
-		description:
-			"Zementestrich, Anhydritestrich und Trockenestrich für professionelle Böden.",
+		description: "Zementestrich, Anhydritestrich und Trockenestrich für professionelle Böden.",
 		icon: "🏠",
 	},
 	{
 		title: "Akustiklösungen",
-		description:
-			"Schalldämmung und Akustikdecken für besseres Raumklima.",
+		description: "Schalldämmung und Akustikdecken für besseres Raumklima.",
 		icon: "🔇",
 	},
 	{
 		title: "Sanierung",
-		description:
-			"Altbau-Sanierung und Renovierung mit Fokus auf Qualität und Effizienz.",
+		description: "Altbau-Sanierung und Renovierung mit Fokus auf Qualität und Effizienz.",
 		icon: "🔧",
 	},
 ];
 ---
 
-<section id="leistungen" class="py-16 px-4">
+<section id="leistungen" class="section">
 	<div class="container">
 		<!-- Section Header -->
-		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold mb-4">
+		<div class="text-center mb-12 animate-fade-in-up">
+			<h2 class="h2 mb-4">
 				Unsere Leistungen
 			</h2>
 			<p class="text-lg max-w-2xl mx-auto" style="color: var(--color-text-muted);">
@@ -55,12 +50,15 @@ const services = [
 
 		<!-- Services Grid -->
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			{services.map((service) => (
+			{services.map((service, index) => (
 				<div
-					class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+					class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
+					style={`animation-delay: ${index * 0.1}s;`}
 				>
-					<div class="text-4xl mb-4">{service.icon}</div>
-					<h3 class="text-xl font-bold mb-3">{service.title}</h3>
+					<div class="text-5xl mb-6 hover:scale-110 transition-transform duration-300">
+						{service.icon}
+					</div>
+					<h3 class="text-xl font-bold mb-4">{service.title}</h3>
 					<p style="color: var(--color-text-muted);">
 						{service.description}
 					</p>
