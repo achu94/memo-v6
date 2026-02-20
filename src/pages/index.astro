@@ -1,8 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import config from "../config/config.json";
 ---
 
-<Layout title="HM Trockenbau - Professioneller Trockenbau" description="HM Trockenbau - Ihr zuverlässiger Partner für professionellen Trockenbau in Berlin und Umgebung.">
-	<h1>Hallo Trockenbau!</h1>
-	<p>Tailwind CSS v4 ist eingerichtet.</p>
+<Layout
+	title={config.site.name + " - " + config.site.tagline}
+	description={config.metadata.meta_description}
+>
+	<Header />
+	<Hero />
+	<Services />
+	<Contact />
+	<Footer />
 </Layout>

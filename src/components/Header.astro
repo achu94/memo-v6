@@ -1,0 +1,30 @@
+---
+import config from "@/config/config.json";
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+	<nav class="container flex items-center justify-between py-4">
+		<!-- Logo -->
+		<a href="/" class="text-xl font-bold" style="color: var(--color-primary);">
+			{config.site.logo_text_custom}
+		</a>
+
+		<!-- Navigation -->
+		<div class="hidden md:flex items-center gap-8">
+			<a href="#leistungen" class="hover:text-blue-600 transition-colors">Leistungen</a>
+			<a href="#uber-uns" class="hover:text-blue-600 transition-colors">Über uns</a>
+			<a href="#referenzen" class="hover:text-blue-600 transition-colors">Referenzen</a>
+			<a href="#kontakt" class="hover:text-blue-600 transition-colors">Kontakt</a>
+		</div>
+
+		<!-- CTA Button -->
+		{config.navigation_button.enable && (
+			<a
+				href={config.navigation_button.link}
+				class="btn btn-primary btn-sm"
+			>
+				{config.navigation_button.label}
+			</a>
+		)}
+	</nav>
+</header>

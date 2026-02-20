@@ -1,0 +1,146 @@
+---
+import config from "@/config/config.json";
+---
+
+<section id="kontakt" class="py-16 px-4" style="background-color: var(--color-neutral);">
+	<div class="container">
+		<!-- Section Header -->
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl font-bold mb-4">
+				Kostenlose Beratung anfordern
+			</h2>
+			<p class="text-lg max-w-2xl mx-auto" style="color: var(--color-text-muted);">
+				Haben Sie Fragen oder möchten Sie ein unverbindliches Angebot
+				anfordern? Kontaktieren Sie uns einfach!
+			</p>
+		</div>
+
+		<!-- Contact Info & Form -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+			<!-- Contact Info -->
+			<div>
+				<h3 class="text-2xl font-bold mb-6">Kontaktinformationen</h3>
+
+				<div class="space-y-4 mb-8">
+					<div class="flex items-start gap-4">
+						<div class="text-2xl">📍</div>
+						<div>
+							<h4 class="font-semibold mb-1">Adresse</h4>
+							<p style="color: var(--color-text-muted);">
+								Berlin und Umgebung
+							</p>
+						</div>
+					</div>
+
+					<div class="flex items-start gap-4">
+						<div class="text-2xl">📞</div>
+						<div>
+							<h4 class="font-semibold mb-1">Telefon</h4>
+							<p style="color: var(--color-text-muted);">
+								030 / 123 456 789
+							</p>
+						</div>
+					</div>
+
+					<div class="flex items-start gap-4">
+						<div class="text-2xl">✉️</div>
+						<div>
+							<h4 class="font-semibold mb-1">E-Mail</h4>
+							<p style="color: var(--color-text-muted);">
+								info@hmtrockenbau.de
+							</p>
+						</div>
+					</div>
+
+					<div class="flex items-start gap-4">
+						<div class="text-2xl">⏰</div>
+						<div>
+							<h4 class="font-semibold mb-1">Arbeitszeiten</h4>
+							<p style="color: var(--color-text-muted);">
+								Mo - Fr: 7:00 - 18:00 Uhr
+							</p>
+							<p style="color: var(--color-text-muted);">
+								Sa: Nach Vereinbarung
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Contact Form -->
+			<div class="bg-white p-8 rounded-lg shadow-md">
+				<h3 class="text-2xl font-bold mb-6">
+					Nachricht senden
+				</h3>
+				<form class="space-y-4">
+					<div>
+						<label
+							for="name"
+							class="block font-semibold mb-2"
+						>
+							Name *
+						</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						/>
+					</div>
+
+					<div>
+						<label
+							for="email"
+							class="block font-semibold mb-2"
+						>
+							E-Mail *
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						/>
+					</div>
+
+					<div>
+						<label
+							for="phone"
+							class="block font-semibold mb-2"
+						>
+							Telefon
+						</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						/>
+					</div>
+
+					<div>
+						<label
+							for="message"
+							class="block font-semibold mb-2"
+						>
+							Nachricht *
+						</label>
+						<textarea
+							id="message"
+							name="message"
+							rows="5"
+							required
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+						></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg w-full">
+						Nachricht absenden
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

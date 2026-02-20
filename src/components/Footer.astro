@@ -1,0 +1,63 @@
+---
+import config from "@/config/config.json";
+---
+
+<footer class="bg-dark text-white py-12">
+	<div class="container">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<!-- Company Info -->
+			<div>
+				<h3 class="text-xl font-bold mb-4">{config.site.name}</h3>
+				<p class="text-light mb-4">{config.site.tagline}</p>
+				<p class="text-light text-sm">
+					Professioneller Trockenbau und Innenausbau in Berlin
+					und Umgebung. Zuverlässig und qualitativ hochwertig.
+				</p>
+			</div>
+
+			<!-- Quick Links -->
+			<div>
+				<h4 class="font-semibold mb-4">Schnellzugriff</h4>
+				<ul class="space-y-2">
+					<li>
+						<a href="#leistungen" class="hover:text-primary transition-colors">
+							Leistungen
+						</a>
+					</li>
+					<li>
+						<a href="#uber-uns" class="hover:text-primary transition-colors">
+							Über uns
+						</a>
+					</li>
+					<li>
+						<a href="#referenzen" class="hover:text-primary transition-colors">
+							Referenzen
+						</a>
+					</li>
+					<li>
+						<a href="#kontakt" class="hover:text-primary transition-colors">
+							Kontakt
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Contact Info -->
+			<div>
+				<h4 class="font-semibold mb-4">Kontakt</h4>
+				<p class="mb-2">📍 Berlin und Umgebung</p>
+				<p class="mb-2">📞 030 / 123 456 789</p>
+				<p class="mb-2">✉️ info@hmtrockenbau.de</p>
+				<div class="mt-4 flex gap-4">
+					<a href="#" class="hover:text-primary transition-colors">Impressum</a>
+					<a href="#" class="hover:text-primary transition-colors">Datenschutz</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="border-t border-gray-700 mt-8 pt-8 text-center text-light text-sm">
+			<p>&copy; 2026 {config.site.name}. Alle Rechte vorbehalten.</p>
+		</div>
+	</div>
+</footer>
